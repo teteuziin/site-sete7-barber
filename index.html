@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sete7 Barber · SETE7 ACADEMY · Nautillus Barber Club — Pau da Lima, Salvador</title>
+<meta name="description" content="Celso Silva, artista da autoestima: curso presencial de barbeiro na SETE7 ACADEMY e a Nautillus Barber Club, em Pau da Lima, Salvador.">
+<link rel="icon" href="media/logo-nautillus.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --preto:#0A0A0B;
+  --preto-2:#0E0E10;
+  --quente:#12100B;
+  --superficie:#151517;
+  --superficie-quente:#1A1712;
+  --linha:rgba(244,241,234,.12);
+  --linha-amarela:rgba(255,207,31,.38);
+  --linha-ouro:rgba(201,162,75,.42);
+  --amarelo:#FFCF1F;
+  --amarelo-escuro:#0A0A0B;
+  --dourado:#C9A24B;
+  --dourado-claro:#E3C878;
+  --texto:#F4F1EA;
+  --suave:#BDB6A8;
+  --raio:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--preto);color:var(--texto);font-family:"Archivo",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.container{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+section{padding:96px 0}
+h1,h2{font-family:"Anton",sans-serif;font-weight:400;line-height:1.04;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:clamp(32px,4.4vw,50px);margin-bottom:16px}
+h3{font-family:"Anton",sans-serif;font-weight:400;letter-spacing:.02em;text-transform:uppercase}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;margin-bottom:16px}
+.kicker.amarelo{color:var(--amarelo)}
+.kicker.ouro{color:var(--dourado-claro)}
+.lead{color:var(--suave);max-width:660px;font-size:18px}
+:focus-visible{outline:2px solid var(--amarelo);outline-offset:3px;border-radius:4px}
+html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+html.js .reveal.visivel{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  html.js .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease;font-family:"Archivo",sans-serif}
+.btn:active{transform:scale(.98)}
+.btn.amarelo{background:var(--amarelo);color:var(--amarelo-escuro)}
+.btn.amarelo:hover{background:#FFD94A}
+.btn.ouro{background:var(--dourado);color:#141005}
+.btn.ouro:hover{background:var(--dourado-claro)}
+.btn.contorno{border-color:var(--linha);color:var(--texto);background:transparent}
+.btn.contorno:hover{border-color:var(--texto)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* ---------- intro ---------- */
+#intro{display:none}
+html.js #intro{position:fixed;inset:0;z-index:200;background:var(--preto);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;cursor:pointer;transition:opacity .5s ease}
+html.js #intro.saiu{opacity:0;pointer-events:none}
+#intro .marca{font-family:"Anton",sans-serif;font-size:clamp(56px,12vw,104px);line-height:1;letter-spacing:.02em}
+#intro .marca b{color:var(--amarelo);font-weight:400}
+#intro .varredura{width:min(240px,55vw);height:2px;background:rgba(244,241,234,.14);overflow:hidden;position:relative}
+#intro .varredura::after{content:"";position:absolute;inset:0;background:var(--amarelo);transform:scaleX(0);transform-origin:left;animation:varre 1.25s ease forwards}
+@keyframes varre{to{transform:scaleX(1)}}
+#intro p{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+@media (prefers-reduced-motion: reduce){#intro .varredura::after{animation:none;transform:scaleX(1)}}
+
+/* ---------- cabeçalho ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--linha)}
+.barra{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.wordmark{font-family:"Anton",sans-serif;font-size:24px;letter-spacing:.03em;text-decoration:none;line-height:1}
+.wordmark b{color:var(--amarelo);font-weight:400}
+nav.principal{display:flex;gap:30px}
+nav.principal a{text-decoration:none;font-size:15px;font-weight:600;color:var(--suave);transition:color .18s}
+nav.principal a:hover{color:var(--texto)}
+.barra .btn{padding:11px 22px;font-size:15px}
+#menuBtn{display:none;background:none;border:1px solid var(--linha);color:var(--texto);border-radius:10px;padding:10px 18px;font:600 15px "Archivo",sans-serif;cursor:pointer}
+
+/* ---------- hero ---------- */
+#inicio{padding:152px 0 88px;background:radial-gradient(ellipse 80% 50% at 78% 0%,rgba(255,207,31,.09) 0%,var(--preto) 60%)}
+.hero-grade{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.marcas{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--suave);margin-bottom:20px}
+.marcas span{color:var(--amarelo)}
+.marcas span.ouro{color:var(--dourado-claro)}
+#inicio h1{font-size:clamp(44px,6.4vw,76px);margin-bottom:24px}
+#inicio h1 em{font-style:normal;color:var(--amarelo)}
+#inicio .lead{margin-bottom:32px}
+.fatos{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.fato{border:1px solid var(--linha);border-radius:999px;padding:9px 20px;font-size:14.5px;font-weight:600;background:rgba(21,21,23,.7)}
+.fato b{color:var(--amarelo);font-weight:700}
+.ctas{display:flex;flex-wrap:wrap;gap:16px}
+.hero-foto{position:relative}
+.hero-foto .moldura-foto{border:1px solid var(--linha-amarela);background:#08080A;padding:10px;border-radius:20px}
+.hero-foto img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px}
+.hero-foto figcaption{margin-top:14px;color:var(--suave);font-size:15px;text-align:center}
+
+/* ---------- molduras de vídeo ---------- */
+.quadro{border:1px solid var(--linha);background:#060607;padding:8px;border-radius:20px}
+.quadro video{width:100%;height:100%;object-fit:contain;background:#000;border-radius:12px}
+.quadro-v{max-width:352px;margin-inline:auto}
+.quadro-v video{aspect-ratio:9/16}
+.quadro-v.estreito{max-width:312px}
+.legenda{margin-top:14px;color:var(--suave);font-size:15px;text-align:center;max-width:352px;margin-inline:auto}
+.legenda b{color:var(--texto)}
+
+/* ---------- curso ---------- */
+#curso{background:var(--preto-2);border-block:1px solid var(--linha)}
+.arco{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.passo{background:var(--superficie);border:1px solid var(--linha);border-radius:var(--raio);padding:20px 20px 24px}
+.passo .num{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.passo .num .n{font-family:"Anton",sans-serif;font-size:30px;color:var(--amarelo);line-height:1}
+.passo .num .rotulo{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.passo .quadro{border-radius:14px}
+.passo p{margin-top:14px;color:var(--suave);font-size:15.5px}
+.passo p b{color:var(--texto)}
+.duas-colunas{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:88px}
+.duas-colunas.invertida .col-video{order:2}
+.bloco-titulo{font-size:clamp(26px,3.2vw,36px);margin-bottom:16px}
+.lista-aprende{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.item-aprende{background:var(--superficie);border:1px solid var(--linha);border-radius:var(--raio);padding:22px}
+.item-aprende h3{font-size:19px;margin-bottom:8px;color:var(--amarelo)}
+.item-aprende p{color:var(--suave);font-size:15px}
+.grade-videos{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;align-items:start}
+.subtitulo{font-size:clamp(24px,3vw,32px);margin-top:88px}
+.subtitulo + .lead{margin-top:8px}
+
+/* ---------- matrícula ---------- */
+#matricula{margin-top:88px;background:#0D0C04;border:1px solid var(--linha-amarela);border-radius:24px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.oferta .preco{font-family:"Anton",sans-serif;font-size:clamp(52px,6vw,76px);color:var(--amarelo);line-height:1;margin:12px 0 20px}
+.oferta ul{list-style:none;display:grid;gap:12px}
+.oferta li{display:flex;gap:12px;align-items:flex-start;font-size:16.5px}
+.oferta li::before{content:"";width:8px;height:8px;background:var(--amarelo);transform:rotate(45deg);flex:none;margin-top:9px}
+.montador{display:grid;gap:16px;align-content:start}
+.montador label{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:grid;gap:8px}
+.montador input,.montador select{background:var(--superficie);border:1px solid var(--linha);border-radius:12px;color:var(--texto);padding:14px 16px;font:500 16px "Archivo",sans-serif;width:100%}
+.montador input:focus,.montador select:focus{border-color:var(--amarelo);outline:none}
+.montador .btn{justify-content:center;margin-top:4px}
+.montador .status{font-size:14.5px;color:var(--suave);min-height:22px;text-align:center}
+
+/* ---------- barbearia ---------- */
+#barbearia{background:var(--quente);border-block:1px solid var(--linha)}
+.barbearia-topo{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center}
+.barbearia-topo .logo-clube{width:190px;height:auto}
+.servicos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.servico{background:var(--superficie-quente);border:1px solid var(--linha);border-radius:var(--raio);padding:22px}
+.servico h3{font-size:19px;margin-bottom:8px;color:var(--dourado-claro)}
+.servico p{color:var(--suave);font-size:15px}
+.estrutura{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.estrutura .fato b{color:var(--dourado-claro)}
+.destaque-loja{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;margin-top:88px}
+
+/* carrossel */
+.carrossel{margin-top:40px}
+.palco{position:relative;border:1px solid var(--linha-ouro);background:#080706;padding:8px;border-radius:20px}
+.slide{display:none}
+.slide.ativo{display:block}
+.slide img,.slide video{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;background:#000}
+.carrossel-controles{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+.seta{width:48px;height:48px;border-radius:50%;border:1px solid var(--linha-ouro);background:transparent;color:var(--dourado-claro);font-size:22px;cursor:pointer;line-height:1}
+.seta:hover{border-color:var(--dourado-claro)}
+.pontos{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.ponto{width:10px;height:10px;border-radius:50%;border:1px solid var(--dourado);background:transparent;cursor:pointer;padding:0}
+.ponto[aria-current="true"]{background:var(--dourado)}
+.contador{font-size:14px;color:var(--suave);font-weight:600;min-width:52px;text-align:center}
+.agende{margin-top:88px;background:var(--superficie-quente);border:1px solid var(--linha-ouro);border-radius:24px;padding:48px;text-align:center}
+.agende h3{font-size:clamp(26px,3.4vw,38px);margin-bottom:12px}
+.agende p{color:var(--suave);max-width:520px;margin:0 auto 32px}
+.agende .ctas{justify-content:center}
+
+/* ---------- o celso ---------- */
+#celso{background:var(--preto-2);border-block:1px solid var(--linha)}
+.assinatura{margin-top:24px;font-size:19px}
+.assinatura b{color:var(--amarelo)}
+
+/* ---------- visite ---------- */
+.visite-grade{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;margin-top:8px}
+.info-bloco{background:var(--superficie);border:1px solid var(--linha);border-radius:var(--raio);padding:28px}
+.info-bloco h3{font-size:20px;margin-bottom:16px}
+.info-bloco p{color:var(--suave);margin-bottom:8px}
+.info-bloco p b{color:var(--texto)}
+.horarios{display:grid;gap:10px}
+.horarios .linha-h{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dashed var(--linha);padding-bottom:10px;color:var(--suave)}
+.horarios .linha-h:last-child{border-bottom:none;padding-bottom:0}
+.horarios .linha-h b{color:var(--texto)}
+.contatos{display:grid;gap:12px;margin-top:24px}
+.contatos .btn{justify-content:center}
+
+/* ---------- rodapé ---------- */
+footer{border-top:1px solid var(--linha);padding:40px 0;background:var(--preto)}
+.rodape{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;color:var(--suave);font-size:14.5px}
+.rodape a{text-decoration:none;font-weight:600}
+.rodape a:hover{color:var(--texto)}
+
+/* ---------- responsivo ---------- */
+@media (max-width: 1020px){
+  .arco{grid-template-columns:1fr;max-width:420px;margin-inline:auto;margin-top:40px}
+  .lista-aprende,.servicos{grid-template-columns:1fr 1fr}
+  #matricula{grid-template-columns:1fr;padding:36px}
+  .barbearia-topo{grid-template-columns:1fr;gap:28px}
+  .barbearia-topo .logo-clube{width:150px}
+}
+@media (max-width: 820px){
+  section{padding:64px 0}
+  nav.principal{display:none;position:absolute;top:72px;left:0;right:0;background:rgba(10,10,11,.98);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--linha)}
+  nav.principal.aberto{display:flex}
+  #menuBtn{display:block}
+  .barra .btn{display:none}
+  .hero-grade,.duas-colunas,.destaque-loja,.visite-grade{grid-template-columns:1fr;gap:40px}
+  .duas-colunas.invertida .col-video{order:0}
+  .hero-foto{max-width:420px;margin-inline:auto;width:100%}
+  #inicio{padding-top:120px}
+  .grade-videos{grid-template-columns:1fr}
+}
+@media (max-width: 560px){
+  .lista-aprende,.servicos{grid-template-columns:1fr}
+  #matricula,.agende{padding:28px 22px}
+  .container{width:calc(100% - 32px)}
+}
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div id="intro" role="presentation">
+  <div class="marca">SETE<b>7</b></div>
+  <div class="varredura"></div>
+  <p>Barber · Academy · Nautillus</p>
+</div>
+
+<!-- CABEÇALHO -->
+<header>
+  <div class="container barra">
+    <a class="wordmark" href="#inicio">SETE<b>7</b> BARBER</a>
+    <nav class="principal" id="menuPrincipal" aria-label="Navegação principal">
+      <a href="#curso">O curso</a>
+      <a href="#barbearia">A barbearia</a>
+      <a href="#celso">O Celso</a>
+      <a href="#visite">Visite-nos</a>
+    </nav>
+    <a class="btn amarelo" href="#matricula">Matrícula</a>
+    <button id="menuBtn" aria-expanded="false" aria-controls="menuPrincipal">Menu</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="container hero-grade">
+    <div>
+      <p class="marcas">Sete7 Barber <span>·</span> SETE7 ACADEMY <span class="ouro">·</span> Nautillus Barber Club</p>
+      <h1>Aqui se corta.<br>Aqui se <em>aprende</em>.</h1>
+      <p class="lead">Sou Celso Silva, barbeiro em Pau da Lima, Salvador. Na Nautillus Barber Club você sai no estilo — e na SETE7 ACADEMY você aprende a profissão comigo, dentro de uma barbearia de verdade.</p>
+      <div class="fatos">
+        <span class="fato">Mais de <b>41 mil</b> seguidores</span>
+        <span class="fato">Um vídeo, <b>330 mil</b> curtidas</span>
+        <span class="fato">Pau da Lima · Salvador</span>
+      </div>
+      <div class="ctas">
+        <a class="btn amarelo" href="#curso">Quero fazer o curso</a>
+        <a class="btn contorno" href="#barbearia">Conhecer a barbearia</a>
+      </div>
+    </div>
+    <figure class="hero-foto reveal">
+      <div class="moldura-foto">
+        <img src="media/celso-perfil.jpg" alt="Celso Silva, dono da Sete7 Barber, sorrindo na barbearia" width="1080" height="1080">
+      </div>
+      <figcaption>Celso Silva — barbeiro e instrutor</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- O CURSO -->
+<section id="curso">
+  <div class="container">
+    <p class="kicker amarelo reveal">SETE7 ACADEMY · Curso presencial de barbeiro</p>
+    <h2 class="reveal">Do desgracê ao Mestre Barbeiro</h2>
+    <p class="lead reveal">O curso acontece dentro da barbearia, com cliente real na cadeira e eu do seu lado. É assim que aluno meu evolui — olha a história do Antony:</p>
+
+    <div class="arco">
+      <article class="passo reveal">
+        <div class="num"><span class="n">1</span><span class="rotulo">O desgracê</span></div>
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/01-viral-desgrace.jpg" data-player src="media/01-viral-desgrace.mp4"></video>
+        </div>
+        <p>Na aula prática, a linha do degradê do Antony saiu torta — e a pausa dele virou o <b>“desgracê”</b>: <b>330 mil curtidas</b> e 6,2 mil comentários.</p>
+      </article>
+      <article class="passo reveal">
+        <div class="num"><span class="n">2</span><span class="rotulo">A evolução</span></div>
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/07-evolucao-antony.jpg" data-player src="media/07-evolucao-antony.mp4"></video>
+        </div>
+        <p>Dois meses depois, o mesmo Antony em nova aula prática, com o degradê saindo do jeito certo: <b>42 mil curtidas</b> torcendo por ele.</p>
+      </article>
+      <article class="passo reveal">
+        <div class="num"><span class="n">3</span><span class="rotulo">Mestre Barbeiro</span></div>
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/10-aluno-formado.jpg" data-player src="media/10-aluno-formado.mp4"></video>
+        </div>
+        <p>Aluno formado assinando o certificado com o selo <b>Mestre Barbeiro</b>: o @pratabarbeiro, pronto pra nova jornada.</p>
+      </article>
+    </div>
+
+    <div class="duas-colunas">
+      <div class="col-video reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/05-convite-curso.jpg" data-player src="media/05-convite-curso.mp4"></video>
+        </div>
+        <p class="legenda">O convite, direto dele — com os alunos praticando atrás.</p>
+      </div>
+      <div class="reveal">
+        <h3 class="bloco-titulo">Eu pego pela mão</h3>
+        <p class="lead">Nas minhas aulas você não fica só olhando. Eu acompanho de perto, corrijo na hora e vou com você <b style="color:var(--texto)">do zero ao avançado</b>. Quem entra sem saber nada, sai cortando — em cliente real, dentro da barbearia.</p>
+      </div>
+    </div>
+
+    <h3 class="subtitulo reveal">O que você aprende</h3>
+    <div class="lista-aprende">
+      <div class="item-aprende reveal"><h3>Máquina e tesoura</h3><p>A base de todo corte, treinada na prática desde o primeiro dia.</p></div>
+      <div class="item-aprende reveal"><h3>Degradê</h3><p>Marcação, blend e acabamento — a técnica que me fez viralizar.</p></div>
+      <div class="item-aprende reveal"><h3>Barba</h3><p>Modelagem completa, do desenho ao acabamento.</p></div>
+      <div class="item-aprende reveal"><h3>Sobrancelha</h3><p>Desenho e acabamento pra fechar o estilo do cliente.</p></div>
+      <div class="item-aprende reveal"><h3>Pigmentação</h3><p>Cobertura e definição de cabelo e barba.</p></div>
+      <div class="item-aprende reveal"><h3>Biossegurança</h3><p>Higiene e segurança no atendimento, como manda o ofício.</p></div>
+    </div>
+
+    <h3 class="subtitulo reveal">A rotina da escola</h3>
+    <p class="lead reveal">Aula aqui é mão na massa: aluno de camiseta SETE7 ACADEMY atendendo cliente de verdade.</p>
+    <div class="grade-videos">
+      <div class="reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/16-dia-de-curso.jpg" data-player src="media/16-dia-de-curso.mp4"></video>
+        </div>
+        <p class="legenda"><b>Dia de curso prático</b> — dois alunos atendendo entre as estações da barbearia.</p>
+      </div>
+      <div class="reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/17-primeiro-corte.jpg" data-player src="media/17-primeiro-corte.mp4"></video>
+        </div>
+        <p class="legenda"><b>Primeiro dia, primeiro corte</b> — a turma começa do zero, comigo ajustando cada passo.</p>
+      </div>
+    </div>
+
+    <h3 class="subtitulo reveal">Quem ensina, domina a técnica</h3>
+    <p class="lead reveal">Meus tutoriais rodam o Brasil inteiro — barbeiro de todo canto debate a técnica nos comentários.</p>
+    <div class="grade-videos">
+      <div class="reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/06-tutorial-low-fade.jpg" data-player src="media/06-tutorial-low-fade.mp4"></video>
+        </div>
+        <p class="legenda"><b>Low fade medido nos dedos</b> — zero embaixo, um dedo, dois dedos. <b>13 mil curtidas.</b></p>
+      </div>
+      <div class="reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/13-tutorial-duas-marcacoes.jpg" data-player src="media/13-tutorial-duas-marcacoes.mp4"></video>
+        </div>
+        <p class="legenda"><b>Degradê com duas marcações</b> — primeiro as linhas, depois o blend. <b>12 mil curtidas.</b></p>
+      </div>
+    </div>
+
+    <!-- MATRÍCULA -->
+    <div id="matricula" class="reveal">
+      <div class="oferta">
+        <p class="kicker amarelo">Curso presencial de barbeiro</p>
+        <div class="preco">R$ 1.800</div>
+        <ul>
+          <li>100% prático, dentro da barbearia</li>
+          <li>Certificado incluso</li>
+          <li>Turmas limitadas</li>
+          <li>Quem te atende é o próprio Celso, do primeiro contato à formatura</li>
+        </ul>
+      </div>
+      <form class="montador" id="formMatricula">
+        <label>Seu nome
+          <input type="text" id="campoNome" autocomplete="name" placeholder="Ex.: Pedro Santos" required>
+        </label>
+        <label>Seu nível
+          <select id="campoNivel" required>
+            <option value="começo do zero">Começo do zero</option>
+            <option value="já corto e quero me aperfeiçoar">Já corto e quero me aperfeiçoar</option>
+          </select>
+        </label>
+        <label>Melhor dia pra você
+          <select id="campoDia" required>
+            <option value="durante a semana">Durante a semana</option>
+            <option value="no sábado">No sábado</option>
+            <option value="qualquer dia">Qualquer dia</option>
+          </select>
+        </label>
+        <label>Melhor horário
+          <select id="campoHorario" required>
+            <option value="de manhã">De manhã</option>
+            <option value="à tarde">À tarde</option>
+            <option value="à noite">À noite</option>
+          </select>
+        </label>
+        <button type="submit" class="btn amarelo">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.3.8-1.7 1.6-2.4 1.6-.6.1-1.4.2-4.7-1-4-1.6-6.5-5.6-6.7-5.9-.2-.3-1.6-2.1-1.6-4s.9-2.8 1.3-3.2c.3-.4.7-.5 1-.5h.7c.2 0 .5 0 .8.6l1 2.4c.1.2.1.5 0 .7l-.5.7-.5.6c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.5 2.6 1.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.4 1.1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+          Chamar no WhatsApp do curso
+        </button>
+        <p class="status" id="statusMatricula" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- A BARBEARIA -->
+<section id="barbearia">
+  <div class="container">
+    <div class="barbearia-topo reveal">
+      <img class="logo-clube" src="media/logo-nautillus.png" alt="Escudo dourado da Nautillus Barber Club, com leme de navio e tesouras" width="381" height="404">
+      <div>
+        <p class="kicker ouro">Nautillus Barber Club · A barbearia</p>
+        <h2>Vem fica no estilo</h2>
+        <p class="lead">Aqui o atendimento é completo: você corta, faz a barba, cuida da pele e sai outro. Olha o que a casa faz por você:</p>
+      </div>
+    </div>
+
+    <div class="servicos">
+      <div class="servico reveal"><h3>Corte</h3><p>Na máquina e na tesoura — degradê, social e o estilo que você pedir.</p></div>
+      <div class="servico reveal"><h3>Barba terapia</h3><p>Barba completa com toalha quente, no capricho.</p></div>
+      <div class="servico reveal"><h3>Limpeza de pele profunda</h3><p>Com aparelho e máscara facial, pra sair com a pele renovada.</p></div>
+      <div class="servico reveal"><h3>Limpeza de ouvido</h3><p>Com a técnica chinesa da vela — o serviço diferente da casa.</p></div>
+      <div class="servico reveal"><h3>Hidratação</h3><p>Lavagem e tratamento do cabelo, com massagem no couro cabeludo.</p></div>
+      <div class="servico reveal"><h3>Depilação nasal</h3><p>Acabamento completo, rápido e sem sofrimento.</p></div>
+      <div class="servico reveal"><h3>Sobrancelha</h3><p>Desenho e acabamento pra fechar o visual.</p></div>
+    </div>
+
+    <div class="estrutura reveal">
+      <span class="fato">Equipe de <b>3 barbeiros</b></span>
+      <span class="fato">Ambiente <b>climatizado</b></span>
+      <span class="fato"><b>Estacionamento amplo</b> do Mercantil</span>
+      <span class="fato"><b>Segurança 24h</b></span>
+      <span class="fato">Atende <b>com e sem agendamento</b></span>
+    </div>
+
+    <div class="destaque-loja">
+      <div class="reveal">
+        <div class="quadro quadro-v estreito">
+          <video controls preload="none" playsinline poster="media/posters/04-institucional-nautillus.jpg" data-player src="media/04-institucional-nautillus.mp4"></video>
+        </div>
+        <p class="legenda">O tour completo da casa, serviço por serviço.</p>
+      </div>
+      <div class="reveal">
+        <h3 class="bloco-titulo">Por dentro da Nautillus</h3>
+        <p class="lead">Fachada com letreiro no piso superior, cadeiras pretas, espelhos redondos, sofá de couro pra esperar no conforto e o escudo dourado no ripado de madeira. Passa as fotos e sente o clima da casa:</p>
+      </div>
+    </div>
+
+    <div class="carrossel reveal" id="carrosselTour" aria-label="Tour fotográfico da barbearia">
+      <div class="palco">
+        <div class="slide ativo"><img src="media/03-tour-barbearia-01.jpg" alt="Celso e colega ao lado da cadeira de barbeiro da Nautillus" loading="lazy"></div>
+        <div class="slide"><img src="media/03-tour-barbearia-02.jpg" alt="Fachada da Nautillus Barber Club com letreiro e barber pole" loading="lazy"></div>
+        <div class="slide"><img src="media/03-tour-barbearia-03.jpg" alt="Interior da barbearia com cadeiras pretas e espelhos redondos" loading="lazy"></div>
+        <div class="slide"><img src="media/03-tour-barbearia-04.jpg" alt="Parede de ripado de madeira com o escudo dourado da Nautillus" loading="lazy"></div>
+        <div class="slide"><img src="media/03-tour-barbearia-05.jpg" alt="Sofá de couro marrom e área de espera da barbearia" loading="lazy"></div>
+        <div class="slide"><img src="media/03-tour-barbearia-06.jpg" alt="Bancadas de madeira e prateleira de produtos da Nautillus" loading="lazy"></div>
+        <div class="slide"><img src="media/03-tour-barbearia-07.jpg" alt="Vista externa da barbearia e do estacionamento do Mercantil" loading="lazy"></div>
+        <div class="slide"><video muted loop playsinline preload="metadata" poster="media/posters/03-tour-barbearia-08.jpg" data-ambiente src="media/03-tour-barbearia-08.mp4" aria-label="Vídeo ambiente do interior da barbearia à noite"></video></div>
+        <div class="slide"><video muted loop playsinline preload="metadata" poster="media/posters/03-tour-barbearia-09.jpg" data-ambiente src="media/03-tour-barbearia-09.mp4" aria-label="Vídeo ambiente da recepção e do lavatório"></video></div>
+        <div class="slide"><video muted loop playsinline preload="metadata" poster="media/posters/03-tour-barbearia-10.jpg" data-ambiente src="media/03-tour-barbearia-10.mp4" aria-label="Vídeo ambiente panorâmico do salão"></video></div>
+      </div>
+      <div class="carrossel-controles">
+        <button class="seta" id="tourAnterior" aria-label="Foto anterior">‹</button>
+        <div class="pontos" id="tourPontos" role="tablist" aria-label="Escolher foto do tour"></div>
+        <span class="contador" id="tourContador">1 / 10</span>
+        <button class="seta" id="tourProximo" aria-label="Próxima foto">›</button>
+      </div>
+    </div>
+
+    <h3 class="subtitulo reveal">O tour com o Celso</h3>
+    <div class="grade-videos">
+      <div class="reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/08-tour-guiado.jpg" data-player src="media/08-tour-guiado.mp4"></video>
+        </div>
+        <p class="legenda"><b>“Vem comigo”</b> — ele te busca na porta do Mercantil, sobe com você e apresenta cada serviço.</p>
+      </div>
+      <div class="reveal">
+        <div class="quadro quadro-v estreito">
+          <video controls preload="none" playsinline poster="media/posters/11-tour-experiencia.jpg" data-player src="media/11-tour-experiencia.mp4"></video>
+        </div>
+        <p class="legenda"><b>A experiência completa</b> — do estacionamento à cadeira: café, corte, barba terapia, limpeza de pele e de ouvido.</p>
+      </div>
+    </div>
+
+    <div class="grade-videos">
+      <div class="reveal">
+        <div class="quadro quadro-v estreito">
+          <video controls preload="none" playsinline poster="media/posters/12-tour-apresentador.jpg" data-player src="media/12-tour-apresentador.mp4"></video>
+        </div>
+        <p class="legenda"><b>“Procurando uma barbearia? Você acabou de achar”</b> — outro passeio pela casa, com o mapa da localização no fim.</p>
+      </div>
+      <div class="reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/15-sabado-movimentado.jpg" data-player src="media/15-sabado-movimentado.mp4"></video>
+        </div>
+        <p class="legenda"><b>Sabadou</b> — salão cheio, cadeira girando e cliente esperando no sofá.</p>
+      </div>
+    </div>
+
+    <div class="grade-videos">
+      <div class="reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/14-dono-sabado.jpg" data-player src="media/14-dono-sabado.mp4"></video>
+        </div>
+        <p class="legenda"><b>Sábado de manhã</b> — o dono abre o dia na porta da loja, com o café pronto, e mostra o movimento por dentro.</p>
+      </div>
+      <div class="reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/20-limpeza-pele.jpg" data-player src="media/20-limpeza-pele.mp4"></video>
+        </div>
+        <p class="legenda"><b>Limpeza de pele</b> — o cuidado que vai além do corte, no clima calmo da casa.</p>
+      </div>
+    </div>
+
+    <div class="grade-videos">
+      <div class="reveal">
+        <div class="quadro quadro-v estreito">
+          <video controls preload="none" playsinline poster="media/posters/18-corte-social-tiago.jpg" data-player src="media/18-corte-social-tiago.mp4"></video>
+        </div>
+        <p class="legenda"><b>Corte social do Tiago</b>, narrado por ele do começo ao fim: “muito afiado”.</p>
+      </div>
+      <div class="reveal" style="display:flex;align-items:center">
+        <div class="agende" style="margin-top:0;width:100%">
+          <h3>Bora ficar no estilo?</h3>
+          <p>Chama no telefone da loja pra garantir seu horário.</p>
+          <div class="ctas">
+            <a class="btn ouro" href="tel:+5571991489704">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+              Ligar pra barbearia
+            </a>
+            <a class="btn contorno" href="https://www.instagram.com/nautillusbarberclub_/" target="_blank" rel="noopener">Instagram da loja</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O CELSO -->
+<section id="celso">
+  <div class="container">
+    <div class="duas-colunas invertida" style="margin-top:0">
+      <div class="col-video reveal">
+        <div class="quadro quadro-v">
+          <video controls preload="none" playsinline poster="media/posters/19-video-vinte-reais.jpg" data-player src="media/19-video-vinte-reais.mp4"></video>
+        </div>
+        <p class="legenda">O vídeo dos vinte reais — o post mais humano da conta.</p>
+      </div>
+      <div class="reveal">
+        <p class="kicker amarelo">Celso Silva · O homem por trás</p>
+        <h2>Antes de barbeiro, gente</h2>
+        <p class="lead">Teve um dia em que ele separou vinte reais pra cortar o próprio cabelo — e decidiu dar o dinheiro pro cliente, como incentivo. Terminou de braços abertos, comemorando. É esse o cara que te atende na cadeira e te ensina na escola.</p>
+        <p class="assinatura">— Celso Silva, <b>artista da autoestima</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISITE-NOS -->
+<section id="visite">
+  <div class="container">
+    <p class="kicker amarelo reveal">Visite-nos</p>
+    <h2 class="reveal">A casa fica em Pau da Lima</h2>
+    <div class="visite-grade">
+      <div class="info-bloco reveal">
+        <h3>Endereço</h3>
+        <p><b>Mercantil Rodrigues</b> (antigo G Barbosa) — piso superior</p>
+        <p>Rua Jayme Vieira Lima, Pau da Lima, Salvador/BA</p>
+        <p>Em frente à Mansão do Caminho</p>
+        <div class="contatos">
+          <a class="btn amarelo" href="https://wa.me/5571991551459" target="_blank" rel="noopener">WhatsApp do curso · (71) 99155-1459</a>
+          <a class="btn contorno" href="tel:+5571991489704">Telefone da barbearia · (71) 99148-9704</a>
+        </div>
+      </div>
+      <div class="info-bloco reveal">
+        <h3>Horários da barbearia</h3>
+        <div class="horarios">
+          <div class="linha-h"><span>Segunda</span><b>9h – 19h</b></div>
+          <div class="linha-h"><span>Terça a sábado</span><b>9h – 20h</b></div>
+          <div class="linha-h"><span>Domingo</span><b>9h – 12h</b></div>
+        </div>
+        <div class="contatos">
+          <a class="btn contorno" href="https://www.instagram.com/sete7_barber/" target="_blank" rel="noopener">Instagram · @sete7_barber</a>
+          <a class="btn contorno" href="https://www.instagram.com/nautillusbarberclub_/" target="_blank" rel="noopener">Instagram · @nautillusbarberclub_</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="container rodape">
+    <a class="wordmark" href="#inicio">SETE<b>7</b> BARBER</a>
+    <span>© <span id="ano">2026</span> Sete7 Barber · SETE7 ACADEMY · Nautillus Barber Club</span>
+    <a href="#curso">Fazer o curso</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduz = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- intro ---------- */
+  var intro = document.getElementById("intro");
+  function fechaIntro(){ if(intro){ intro.classList.add("saiu"); setTimeout(function(){ intro.style.display="none"; }, 550); } }
+  if(intro){
+    if(reduz){ intro.style.display="none"; }
+    else{
+      setTimeout(fechaIntro, 1600);
+      intro.addEventListener("click", fechaIntro);
+    }
+  }
+
+  /* ---------- menu mobile ---------- */
+  var menuBtn = document.getElementById("menuBtn");
+  var menu = document.getElementById("menuPrincipal");
+  if(menuBtn && menu){
+    menuBtn.addEventListener("click", function(){
+      var aberto = menu.classList.toggle("aberto");
+      menuBtn.setAttribute("aria-expanded", aberto ? "true" : "false");
+    });
+    menu.addEventListener("click", function(e){
+      if(e.target.tagName === "A"){ menu.classList.remove("aberto"); menuBtn.setAttribute("aria-expanded","false"); }
+    });
+  }
+
+  /* ---------- ano ---------- */
+  var ano = document.getElementById("ano");
+  if(ano){ ano.textContent = new Date().getFullYear(); }
+
+  /* ---------- reveal ---------- */
+  var revelaveis = document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window && !reduz){
+    var ioReveal = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("visivel"); ioReveal.unobserve(en.target); }
+      });
+    }, {threshold: 0.12});
+    revelaveis.forEach(function(el){ ioReveal.observe(el); });
+  } else {
+    revelaveis.forEach(function(el){ el.classList.add("visivel"); });
+  }
+
+  /* ---------- players: pausa fora da tela, nunca retoma sozinho ---------- */
+  var players = document.querySelectorAll("video[data-player]");
+  if("IntersectionObserver" in window){
+    var ioVideo = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(en){
+        if(!en.isIntersecting && !en.target.paused){ en.target.pause(); }
+      });
+    }, {threshold: 0.25});
+    players.forEach(function(v){ ioVideo.observe(v); });
+  }
+
+  /* ---------- carrossel do tour ---------- */
+  var carrossel = document.getElementById("carrosselTour");
+  if(carrossel){
+    var slides = Array.prototype.slice.call(carrossel.querySelectorAll(".slide"));
+    var pontosBox = document.getElementById("tourPontos");
+    var contador = document.getElementById("tourContador");
+    var atual = 0, palcoVisivel = false;
+    var pontos = slides.map(function(_, i){
+      var b = document.createElement("button");
+      b.className = "ponto";
+      b.type = "button";
+      b.setAttribute("aria-label", "Ir para o item " + (i+1) + " do tour");
+      if(i === 0){ b.setAttribute("aria-current","true"); }
+      b.addEventListener("click", function(){ irPara(i); });
+      pontosBox.appendChild(b);
+      return b;
+    });
+    function videoDoSlide(i){
+      return slides[i].querySelector("video[data-ambiente]");
+    }
+    function sincronizaAmbiente(){
+      slides.forEach(function(_, i){
+        var v = videoDoSlide(i);
+        if(!v) return;
+        if(i === atual && palcoVisivel){ var p = v.play(); if(p && p.catch){ p.catch(function(){}); } }
+        else if(!v.paused){ v.pause(); }
+      });
+    }
+    function irPara(i){
+      slides[atual].classList.remove("ativo");
+      pontos[atual].removeAttribute("aria-current");
+      atual = (i + slides.length) % slides.length;
+      slides[atual].classList.add("ativo");
+      pontos[atual].setAttribute("aria-current","true");
+      contador.textContent = (atual+1) + " / " + slides.length;
+      sincronizaAmbiente();
+    }
+    document.getElementById("tourAnterior").addEventListener("click", function(){ irPara(atual-1); });
+    document.getElementById("tourProximo").addEventListener("click", function(){ irPara(atual+1); });
+    if("IntersectionObserver" in window){
+      var ioPalco = new IntersectionObserver(function(entradas){
+        entradas.forEach(function(en){
+          palcoVisivel = en.isIntersecting;
+          sincronizaAmbiente();
+        });
+      }, {threshold: 0.25});
+      ioPalco.observe(carrossel);
+    } else { palcoVisivel = true; sincronizaAmbiente(); }
+  }
+
+  /* ---------- montador de matrícula ---------- */
+  var form = document.getElementById("formMatricula");
+  if(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var nome = document.getElementById("campoNome").value.trim();
+      var nivel = document.getElementById("campoNivel").value;
+      var dia = document.getElementById("campoDia").value;
+      var horario = document.getElementById("campoHorario").value;
+      var status = document.getElementById("statusMatricula");
+      if(!nome){ status.textContent = "Me diz seu nome pra eu montar a mensagem."; return; }
+      var msg = "Oi, Celso! Quero me matricular no curso presencial de barbeiro da SETE7 ACADEMY (R$ 1.800). " +
+        "Meu nome é " + nome + ". Meu nível: " + nivel + ". " +
+        "Melhor dia pra mim: " + dia + ". Melhor horário: " + horario + ".";
+      status.textContent = "Abrindo seu WhatsApp com a mensagem pronta…";
+      window.open("https://wa.me/5571991551459?text=" + encodeURIComponent(msg), "_blank", "noopener");
+    });
+  }
+})();
+</script>
+</body>
+</html>
